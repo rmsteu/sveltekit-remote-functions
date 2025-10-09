@@ -22,7 +22,7 @@
 
 		<button
 			onclick={() => {
-				likePost(post.id).updates(getPostLikes(post.id).withOverride((likes) => likes++))
+				likePost(post.id).updates(getPostLikes(post.id).withOverride((likes) => likes + 1))
 			}}
 			class="outline"
 		>
