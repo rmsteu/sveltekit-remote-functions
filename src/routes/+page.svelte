@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { getPosts } from '$lib/api/posts.remote'
 </script>
 
