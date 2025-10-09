@@ -1,18 +1,18 @@
 # SvelteKit Remote Functions
 
-This is a demo for [SvelteKit remote functions](https://svelte.dev/docs/kit/remote-functions) using [Better Auth](https://www.better-auth.com/) for authentication and [Drizzle ORM](https://orm.drizzle.team/).
+This is a SvelteKit [remote functions](https://svelte.dev/docs/kit/remote-functions) example using [Better Auth](https://www.better-auth.com/) for authentication and [Drizzle ORM](https://orm.drizzle.team/).
 
 ## Setup
 
 ### ⬇️ Get the code
 
-If you just want to try the example:
+a) If you just want to try it:
 
 ```sh
 npx degit joysofcode/sveltekit-remote-functions example
 ```
 
-If you're following along with the tutorial:
+b) If you're following along with the tutorial:
 
 ```sh
 npx degit joysofcode/sveltekit-remote-functions#starter example
