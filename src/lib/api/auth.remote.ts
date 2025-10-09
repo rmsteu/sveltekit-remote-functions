@@ -2,7 +2,6 @@ import { redirect } from '@sveltejs/kit'
 import { form, getRequestEvent, query } from '$app/server'
 import { auth } from '$lib/server/auth'
 import { signupSchema, loginSchema } from '$lib/schema/auth'
-import type { User } from '$lib/server/database/schema'
 
 export const signup = form(signupSchema, async (user) => {
 	await auth.api.signUpEmail({ body: user })
