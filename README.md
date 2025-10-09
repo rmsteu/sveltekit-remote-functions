@@ -1,38 +1,43 @@
-# sv
+# SvelteKit Remote Functions
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is a demo for [SvelteKit remote functions](https://svelte.dev/docs/kit/remote-functions) using [Better Auth](https://www.better-auth.com/) for authentication and [Drizzle ORM](https://orm.drizzle.team/).
 
-## Creating a project
+## Setup
 
-If you're seeing this, you've probably already done this step. Congrats!
+### ⬇️ Get the code
+
+If you just want to try the example:
 
 ```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+npx degit joysofcode/sveltekit-remote-functions example
 ```
 
-## Developing
+If you're following along with the tutorial:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```sh
+npx degit joysofcode/sveltekit-remote-functions#starter example
+```
+
+### ✏️ Rename .env.example
+
+```sh
+mv .env.example .env
+```
+
+### 📦️ Install dependencies
+
+```sh
+npm i
+```
+
+### Create tables from Drizzle schema
+
+```sh
+npm run db:push
+```
+
+### 🧑‍💻 Start the development server
 
 ```sh
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
