@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { getAuthorPosts } from '$lib/api/posts.remote'
-
 	let { children } = $props()
 </script>
 
@@ -12,11 +10,9 @@
 		</div>
 
 		<ul>
-			{#each await getAuthorPosts() as post}
+			{#each [] as post}
 				<li>
-					<a href="/admin/edit/{post.slug}" class="truncate-text capitalize">
-						{post.title}
-					</a>
+					<a href="/admin/edit/slug" class="truncate-text capitalize">Title</a>
 				</li>
 			{/each}
 		</ul>

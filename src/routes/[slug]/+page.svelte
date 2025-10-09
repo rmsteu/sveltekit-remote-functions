@@ -1,41 +1,22 @@
 <script lang="ts">
-	import {
-		getPostLikes,
-		getPost,
-		getPosts,
-		likePost,
-		postComment,
-		getPostComments,
-	} from '$lib/api/posts.remote.js'
-
-	let { params } = $props()
-
-	const post = $derived(await getPost(params.slug))
 </script>
 
 <div class="content">
 	<div>
 		<article>
-			<h1>{post.title}</h1>
-			<div>{@html post.content}</div>
+			<h1>Title</h1>
+			<div>Content</div>
 		</article>
 
-		<button
-			onclick={() => {
-				likePost(post.id).updates(getPostLikes(post.id).withOverride((likes) => likes + 1))
-			}}
-			class="outline"
-		>
-			❤️ {await getPostLikes(post.id)}
-		</button>
+		<button class="outline">❤️ 0</button>
 
 		<div class="comments">
 			<h2>Comments</h2>
 
-			{#each await getPostComments(post.id) as { author, comment }}
+			{#each [] as { author, comment }}
 				<div class="comment">
-					<h6>@{author}</h6>
-					<p>{comment}</p>
+					<h6>author</h6>
+					<p>comment</p>
 				</div>
 			{:else}
 				<p>No comments</p>
@@ -43,24 +24,18 @@
 
 			<h2>Leave a comment</h2>
 
-			<form {...postComment.enhance(({ submit }) => submit())}>
+			<form>
 				<label>
 					Name
-					<input {...postComment.fields.author.as('text')} value="Anonymous" />
-					{#each postComment.fields.author.issues() ?? [] as issue}
-						<p class="issue">{issue.message}</p>
-					{/each}
+					<input type="text" name="author" value="Anonymous" />
 				</label>
 
 				<label>
 					Comment
-					<textarea {...postComment.fields.comment.as('text')}></textarea>
-					{#each postComment.fields.comment.issues() ?? [] as issue}
-						<p class="issue">{issue.message}</p>
-					{/each}
+					<textarea name="comment"></textarea>
 				</label>
 
-				<input {...postComment.fields.postId.as('hidden', post.id.toString())} />
+				<input type="hidden" value="id" />
 
 				<button type="submit">Post comment</button>
 			</form>
@@ -70,9 +45,9 @@
 	<div>
 		<h2>More Svelte</h2>
 		<ul>
-			{#each await getPosts() as post}
+			{#each [] as post}
 				<li>
-					<a href="/{post.slug}" class="capitalize">{post.title}</a>
+					<a href="/slug" class="capitalize">Title</a>
 				</li>
 			{/each}
 		</ul>

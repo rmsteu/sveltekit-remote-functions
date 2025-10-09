@@ -1,40 +1,27 @@
 <script lang="ts">
-	import { getPost, removePost, updatePost } from '$lib/api/posts.remote.js'
-
-	let { params } = $props()
-
-	const post = $derived(await getPost(params.slug))
+	const post = { id: 1, title: 'placeholder', slug: 'placeholder', content: 'placeholder' }
 </script>
 
 <h1>Update post</h1>
 
-<form {...updatePost.enhance(({ submit }) => submit())}>
+<form>
 	<label>
 		Title
-		<input {...updatePost.fields.title.as('text')} value={post.title} />
-		{#each updatePost.fields.title.issues() ?? [] as issue}
-			<p class="issue">{issue.message}</p>
-		{/each}
+		<input type="text" name="title" value={post.title} />
 	</label>
 
 	<label>
 		Slug
-		<input {...updatePost.fields.slug.as('text')} value={post.slug} />
-		{#each updatePost.fields.slug.issues() ?? [] as issue}
-			<p class="issue">{issue.message}</p>
-		{/each}
+		<input name="slug" value={post.slug} />
 	</label>
 
 	<label>
 		Content
-		<textarea {...updatePost.fields.content.as('text')} value={post.content}></textarea>
-		{#each updatePost.fields.content.issues() ?? [] as issue}
-			<p class="issue">{issue.message}</p>
-		{/each}
+		<textarea name="content" value={post.content}></textarea>
 	</label>
 
-	<input {...updatePost.fields.id.as('hidden', post.id.toString())} />
+	<input type="hidden" value={post.id} />
 
 	<button type="submit">Update</button>
-	<button {...removePost.buttonProps}>Delete</button>
+	<button>Delete</button>
 </form>
