@@ -29,5 +29,7 @@
 		{/each}
 	</label>
 
-	<button type="submit">Publish</button>
+	<button type="submit" aria-busy={!!createPost.pending} disabled={!!createPost.pending}>
+		Publish
+	</button>
 </form>

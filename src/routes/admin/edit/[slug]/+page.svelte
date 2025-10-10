@@ -35,6 +35,15 @@
 
 	<input {...updatePost.fields.id.as('hidden', post.id.toString())} />
 
-	<button type="submit">Update</button>
-	<button {...removePost.buttonProps}>Delete</button>
+	<button type="submit" aria-busy={!!updatePost.pending} disabled={!!updatePost.pending}>
+		Update
+	</button>
+
+	<button
+		{...removePost.buttonProps}
+		aria-busy={!!removePost.pending}
+		disabled={!!removePost.pending}
+	>
+		Delete
+	</button>
 </form>

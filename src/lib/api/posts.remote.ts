@@ -35,16 +35,19 @@ export const getPost = query(z.string(), async (slug) => {
 })
 
 export const createPost = form(createPostSchema, async (post) => {
+	await delay(300)
 	const user = requireAuth()
 	await db.insert(table.posts).values({ ...post, authorId: user.id })
 	redirect(303, `/admin/edit/${post.slug}`)
 })
 
 export const updatePost = form(updatePostSchema, async ({ id, title, slug, content }) => {
+	await delay(300)
 	await db.update(table.posts).set({ title, slug, content }).where(eq(table.posts.id, id))
 })
 
 export const removePost = form(updatePostSchema, async ({ id }) => {
+	await delay(300)
 	await db.delete(table.posts).where(eq(table.posts.id, id))
 	redirect(303, `/admin`)
 })
@@ -72,5 +75,6 @@ export const getPostComments = query(z.number(), async (id) => {
 })
 
 export const postComment = form(postCommentSchema, async (comment) => {
+	await delay(300)
 	await db.insert(table.comments).values(comment)
 })

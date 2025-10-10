@@ -67,7 +67,9 @@
 
 				<input {...postComment.fields.postId.as('hidden', post.id.toString())} />
 
-				<button type="submit">Post comment</button>
+				<button type="submit" aria-busy={!!postComment.pending} disabled={!!postComment.pending}>
+					Post comment
+				</button>
 			</form>
 		</div>
 	</div>
