@@ -43,7 +43,12 @@
 
 			<h2>Leave a comment</h2>
 
-			<form {...postComment.enhance(({ submit }) => submit())}>
+			<form
+				{...postComment.enhance(({ submit }) => {
+					submit()
+					postComment.fields.comment.set('')
+				})}
+			>
 				<label>
 					Name
 					<input {...postComment.fields.author.as('text')} value="Anonymous" />
