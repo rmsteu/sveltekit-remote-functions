@@ -1,8 +1,8 @@
 import { getPosts } from '$lib/api/posts.remote'
 
 const site = {
-	title: 'The Svelte Times',
-	description: 'The latest Svelte news and articles',
+	title: 'Svelte Tricks',
+	description: 'Latest Svelte tips and tricks',
 	url: 'http://localhost:5173/',
 }
 

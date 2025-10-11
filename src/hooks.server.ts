@@ -5,7 +5,7 @@ import type { Handle } from '@sveltejs/kit'
 
 export const handle: Handle = async ({ event, resolve }) => {
 	const session = await auth.api.getSession({
-		headers: event.request.headers
+		headers: event.request.headers,
 	})
 
 	if (session) {
