@@ -1,4 +1,4 @@
-import * as z from 'zod'
+import { z } from 'zod/mini'
 
 export const signupSchema = z.object({
 	name: z.string().check(z.minLength(4)),

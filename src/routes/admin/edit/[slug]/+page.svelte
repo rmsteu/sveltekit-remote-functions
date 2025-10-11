@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getPost, removePost, updatePost } from '$lib/api/posts.remote.js'
+	import { getPost, removePost, updatePost } from '$lib/api/posts.remote'
 
 	let { params } = $props()
 
@@ -35,15 +35,6 @@
 
 	<input {...updatePost.fields.id.as('hidden', post.id.toString())} />
 
-	<button type="submit" aria-busy={!!updatePost.pending} disabled={!!updatePost.pending}>
-		Update
-	</button>
-
-	<button
-		{...removePost.buttonProps}
-		aria-busy={!!removePost.pending}
-		disabled={!!removePost.pending}
-	>
-		Delete
-	</button>
+	<button type="submit" aria-busy={!!updatePost.pending}>Update</button>
+	<button {...removePost.buttonProps} aria-busy={!!removePost.pending}>Delete</button>
 </form>

@@ -82,6 +82,3 @@ export const comments = sqliteTable('comments', {
 	comment: text('comment').notNull(),
 	...timestamps,
 })
-
-export type Session = typeof session.$inferSelect
-export type User = typeof user.$inferSelect

@@ -6,7 +6,7 @@
 		likePost,
 		postComment,
 		getPostComments,
-	} from '$lib/api/posts.remote.js'
+	} from '$lib/api/posts.remote'
 
 	let { params } = $props()
 
@@ -67,9 +67,7 @@
 
 				<input {...postComment.fields.postId.as('hidden', post.id.toString())} />
 
-				<button type="submit" aria-busy={!!postComment.pending} disabled={!!postComment.pending}>
-					Post comment
-				</button>
+				<button type="submit" aria-busy={!!postComment.pending}>Post comment</button>
 			</form>
 		</div>
 	</div>
