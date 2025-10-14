@@ -10,7 +10,7 @@ This is a SvelteKit [remote functions](https://svelte.dev/docs/kit/remote-functi
 npx degit joysofcode/sveltekit-remote-functions example
 ```
 
-If you want to follow along with the YouTube tutorial use the [starter branch](https://github.com/joysofcode/sveltekit-remote-functions/tree/starter) instead:
+> If you want to follow along with the [YouTube tutorial](https://youtu.be/Ldnmirx0QtI) use the [starter branch](https://github.com/joysofcode/sveltekit-remote-functions/tree/starter) instead:
 
 ```sh
 npx degit joysofcode/sveltekit-remote-functions#starter example
